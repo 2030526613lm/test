@@ -1,0 +1,113 @@
+body,div,dl,dt,dd,ul,li,ol,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+body{
+	background: url(imgs/1.jpg) no-repeat;
+	/* 背景图片填满整个网页 */
+	background-size: cover;
+	overflow: hidden;
+	}
+ul{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	bottom: 100px;
+	margin-left: -100px;
+	transform-style:preserve-3d;
+	animation: xuanzhuan 6s linear 0s infinite normal;
+	left: 50%  
+}
+@keyframes xuanzhuan{
+	from{
+		/* 在编写动画时，固定不变的值写在前面 */
+		transform:rotateX(-10deg) rotateY(0deg);
+	}
+	to{
+		transform:rotateX(-10deg) rotateY(360deg);
+	}
+}
+ul>li{
+	/* 去掉前面的小圆点 */
+	list-style: none;
+	width: 200px;
+	height: 200px;
+	font-size: 60px;
+	text-align: center;
+	line-height: 200px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: black;
+}
+/* 先找到ul，在找到第一个li，序选择器 */
+ul li:nth-child(1){
+	transform: rotateY(60deg) translateZ(200px);
+}
+ul li:nth-child(2){
+	transform: rotateY(120deg) translateZ(200px);
+}
+ul li:nth-child(3){
+	transform: rotateY(180deg) translateZ(200px);
+}
+ul li:nth-child(4){
+	transform: rotateY(240deg) translateZ(200px);
+}
+ul li:nth-child(5){
+	transform: rotateY(300deg) translateZ(200px);
+}
+ul li:nth-child(6){
+	transform: rotateY(360deg) translateZ(200px);
+}
+ul li img{
+	width: 200px;
+	height: 200px;
+	border: 5px solid palegoldenrod;
+	box-sizing: border-box;
+}
+ul:hover{
+	animation-play-state: paused;
+}
+ul:hover li img{
+	opacity:0.5;
+}
+ul li:hover img{
+	opacity: 1;
+}
+.xin{
+	width: 150px;
+	height:150px;
+	position:absolute;
+	left: 0px;
+	bottom: 0px;
+	animation: xin 8s linear 0s infinite normal;
+}
+@keyframes xin{
+	0%{
+	left: 100px;
+	bottom: 100px;
+	opacity: 1;
+	}
+	20%{
+		left:300px;
+		bottom: 300px;
+		opacity: 0;
+	}
+	40%{
+		left:500px;
+		bottom: 500px;
+		opacity: 1;
+	}
+	60%{
+		left:800px;
+		bottom: 300px;
+		opacity:0;
+	}
+	80%{
+		left:1200px;
+		bottom: 100px;
+		opacity: 1;
+	}
+	100%{
+		left:650px;
+		bottom: -200px;
+		opacity: 0;
+	}
+}
